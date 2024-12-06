@@ -29,7 +29,7 @@ export const navLinks = [
     link: "/",
   },
   {
-    name: "About",
+    name: "About Julia",
     link: "/about",
   },
   {

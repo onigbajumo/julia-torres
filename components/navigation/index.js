@@ -49,7 +49,7 @@ const Navigation = () => {
           </div>
           <Link
             href="#contact"
-            className="text-secondary px-4 py-2 rounded-full bg-[#FEFEFE] font-semibold font-[family-name:var(--font-marri-weather)]"
+            className="text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-full bg-[#FEFEFE] font-semibold font-[family-name:var(--font-marri-weather)]"
           >
             Contact Me
           </Link>
