@@ -1,14 +1,16 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const marri = localFont({
+  src: "./fonts/Merriweather.ttf",
+  variable: "--font-marri-weather",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const playFair = localFont({
+  src: "./fonts/PlayFair.ttf",
+  variable: "--font-playfair-display",
   weight: "100 900",
 });
 
@@ -21,9 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playFair.variable} ${marri.variable} antialiased font-[family-name:var(--font-playfair-display)] bg-[#F7F7F7]`}
       >
-        {children}
+        <Navigation />
+          {children}
+        <Footer />
       </body>
     </html>
   );
