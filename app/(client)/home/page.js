@@ -1,7 +1,11 @@
+"use client";
+import BlueskyEmbed from "@/components/Bluesky";
+import BlueskyProfile from "@/components/BlueskyProfile";
+import Button from "@/components/Button";
 import Hero from "@/components/hero";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const awareness = [
   {
@@ -21,11 +25,21 @@ const awareness = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-12 mb-12">
       <section className="container">
         <div className="bg-secondary rounded-2xl py-6 md:py-10 px-4 md:px-14 grid md:grid-cols-7 bg-[url('/images/portrait.png')] bg-contain bg-bottom lg:bg-right bg-no-repeat md:h-[80vh]">
-          <div className="md:col-span-5 flex flex-col gap-5 justify-center h-[40vh] lg:h-auto">
+          <div className="md:col-span-6 flex flex-col gap-5 justify-center h-[40vh] lg:h-auto">
             <h1 className="text-white lg:text-8xl lg:!leading-[120px]">
               Empowering the Future of Education
             </h1>
@@ -36,12 +50,7 @@ const Home = () => {
             </p>
 
             <div className="flex">
-              <Link
-                className="bg-primary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow-white.svg')] bg-contain bg-right bg-no-repeat font-[family-name:var(--font-marri-weather)]"
-                href="/contact"
-              >
-                Explore My Resources
-              </Link>
+              <Button path="/contact" text="Explore My Resources" type="primary" />
             </div>
           </div>
 
@@ -73,12 +82,7 @@ const Home = () => {
           </p>
 
           <div className="flex">
-            <Link
-              href="/about"
-              className="bg-secondary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow.svg')] bg-contain bg-right bg-no-repeat"
-            >
-              About Me
-            </Link>
+            <Button path="/about" text="About Me" type="secondary" />
           </div>
         </div>
       </section>
@@ -121,15 +125,49 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <div className="flex justify-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="bg-secondary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow.svg')] bg-contain bg-right bg-no-repeat"
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </div> */}
+      <section className="container space-y-8">
+        <div>
+          <h2 className="w-full md:w-2/3 lg:w-1/3">
+            Let’s talk teaching & librarianship.
+          </h2>
+
+          <p className="mt-3 w-full md:w-2/3">
+            What are you looking for? Whether it’s a webinar, workshop or
+            professional development sessions, I’ll customize content to
+            rejuvenate and inspire your team.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2">
+          <div className="rounded-tl-2xl md:rounded-bl-2xl rounded-tr-2xl md:rounded-tr-none bg-primary p-8 flex flex-col justify-center gap-5">
+            <h2 className="text-white">
+              Don't miss a thing! Follow me on Bluesky
+            </h2>
+            <p className="text-white">
+              Education and librarianship news, workshop offerings, affiliate
+              news and the occasional rant - I’m active on Bluesky, so come join
+              me.
+            </p>
+          </div>
+
+          <div className="w-full bg-white p-6 rounded-bl-2xl md:rounded-bl-2xl-none md:rounded-tr-2xl rounded-br-2xl">
+            {/* <a
+              className="twitter-timeline"
+              href={`https://twitter.com/juliaerin80`}
+              data-height="600"
+            >
+              Tweets by juliaerin80
+            </a> */}
+
+            <BlueskyEmbed uri="at://did:plc:rmoo6cwg3hx7j66bqgveifmb/app.bsky.feed.post/3lcqpqaorrk23" cid="bafyreib75m6uwd4hlawem45ow5a7tc62l25hogxcxa2q6547palkfbrjam" />
+            <BlueskyEmbed uri="at://did:plc:rmoo6cwg3hx7j66bqgveifmb/app.bsky.feed.post/3lb4issykwo2z" cid="bafyreidr3rqzuy52wmfkzktvkss5uvawodfx3pjsnwpggnx35un2fuiody" />
+
+            {/* <div className="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 33.3333%; padding-top: 120px;"><a href="https://bsky.app/profile/juliaerin80.bsky.social" data-iframely-url="//iframely.net/tyHOK4O"></a></div></div><script async src="//iframely.net/embed.js"></script> */}
+
+            {/* <BlueskyProfile profileUrl="https://bsky.app/profile/juliaerin80.bsky.social" /> */}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

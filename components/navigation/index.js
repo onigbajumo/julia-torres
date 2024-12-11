@@ -15,7 +15,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className="container py-4">
+    <div className="container py-4 lg:py-10">
       <div className="flex justify-between items-center border-white border-2 rounded-full px-3 md:px-7 py-2 bg-[#E3E3E3]">
         <div>
           <Link href="/">

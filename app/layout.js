@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${playFair.variable} ${marri.variable} antialiased font-[family-name:var(--font-playfair-display)] bg-[#F7F7F7]`}
+        className={`${playFair.variable} ${marri.variable} antialiased font-[family-name:var(--font-marri-weather)] bg-[#F7F7F7]`}
       >
         <Navigation />
           {children}

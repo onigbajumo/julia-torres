@@ -14,13 +14,13 @@ const Footer = () => {
       <div className="bg-primary">
         <div className=" py-7 container flex flex-col gap-14">
           <div className="flex md:items-center gap-5 flex-col md:flex-row justify-between">
-            <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-16 md:items-center">
+            <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-8 md:items-center">
               <Image
-                src="/images/footer-logo.png"
+                src="/images/logo.png"
                 width={500}
                 height={500}
                 alt="logo"
-                className="w-28"
+                className="w-16"
               />
 
               <p className="text-white">Empowering the Future of Education</p>

@@ -8,19 +8,19 @@
 }
 
 h1 {
-  @apply text-3xl md:text-4xl lg:text-7xl font-semibold;
+  @apply text-3xl md:text-4xl lg:text-7xl font-semibold font-[family-name:var(--font-playfair-display)];
 }
 
 h2 {
-  @apply text-2xl lg:text-4xl font-semibold;
+  @apply text-2xl lg:text-4xl font-semibold font-[family-name:var(--font-playfair-display)];
 }
 
 h3 {
-  @apply text-lg md:text-xl lg:text-4xl font-medium;
+  @apply text-lg md:text-xl lg:text-2xl font-medium font-[family-name:var(--font-playfair-display)];
 }
 
 h4 {
-  @apply text-base md:text-lg lg:text-xl font-medium;
+  @apply text-base md:text-lg lg:text-xl font-medium font-[family-name:var(--font-playfair-display)];
 }
 
 p {
