@@ -6,6 +6,7 @@ import { IoMdTime } from "react-icons/io";
 import { GrLocation } from "react-icons/gr";
 import Link from "next/link";
 import { BiDownload } from "react-icons/bi";
+import EmailMe from "@/components/cta-section";
 
 const organizations = [
   {
@@ -116,7 +117,7 @@ const Page = () => {
   return (
     <div className="mb-10 space-y-10">
       <Hero
-        heading="Affiliates"
+        heading="Partners"
         subheading="Organizations and communities I’ve partnered with to make an impact"
         bg="/images/affiliate.png"
       />
@@ -155,7 +156,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="container">
+      {/* <section className="container">
         <h2>Highlights from Past Events</h2>
 
         <div className="mt-5 space-y-5">
@@ -213,7 +214,10 @@ const Page = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+
+
+      <EmailMe image="/images/email-1.png" />
 
 
 

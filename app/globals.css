@@ -24,7 +24,7 @@ h4 {
 }
 
 p {
-  @apply text-lg md:text-xl;
+  @apply text-base md:text-lg text-[#333333];
 }
 
 label {

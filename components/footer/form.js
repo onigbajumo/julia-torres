@@ -135,7 +135,7 @@ const ContactForm = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="bg-secondary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow.svg')] bg-contain bg-right bg-no-repeat"
+                      className="bg-secondary hover:bg-primary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow.svg')] bg-contain bg-right bg-no-repeat"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>

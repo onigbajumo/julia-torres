@@ -26,7 +26,7 @@ export const socials = [
 export const navLinks = [
   {
     name: "Home",
-    link: "/",
+    link: "/home",
   },
   {
     name: "About Julia",
@@ -41,8 +41,8 @@ export const navLinks = [
     link: "/media",
   },
   {
-    name: "Affiliates",
-    link: "/affiliates",
+    name: "Partners",
+    link: "/partners",
   },
   {
     name: "Blog",

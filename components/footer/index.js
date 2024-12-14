@@ -1,10 +1,19 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Form from "./form";
 import { socials } from "@/libs/data";
+import { usePathname } from "next/navigation";
+
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  if (pathname === "/" || pathname.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <footer>
       <div id="contact">
