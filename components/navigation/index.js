@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { navLinks, socials } from "@/libs/data";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
@@ -8,18 +8,28 @@ import Image from "next/image";
 
 const Navigation = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  const { pathname } = useRouter();
+  const pathname = usePathname();
+
+  if ((pathname === "/") || pathname.startsWith("/admin")) {
+    return null;
+  }
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
   return (
-    <div className="container py-4">
+    <div className="container py-4 lg:py-10">
       <div className="flex justify-between items-center border-white border-2 rounded-full px-3 md:px-7 py-2 bg-[#E3E3E3]">
         <div>
-          <Link href="/">
-            <Image src="/images/logo.png" width={1000} height={1000} alt="logo" className="w-14" />
+          <Link href="/home">
+            <Image
+              src="/images/logo.png"
+              width={1000}
+              height={1000}
+              alt="logo"
+              className="w-14"
+            />
           </Link>
         </div>
 
@@ -28,8 +38,10 @@ const Navigation = () => {
             <Link
               key={index}
               href={nav.link}
-              className={`font-semibold font-[family-name:var(--font-marri-weather)] ${
-                pathname === nav.link ? "text-secondary" : "text-black hover:text-primary"
+              className={`font-semibold font-[var(--font-marri-weather)] ${
+                pathname === nav.link
+                  ? "text-secondary"
+                  : "text-black hover:text-secondary"
               }`}
             >
               {nav.name}
@@ -41,7 +53,7 @@ const Navigation = () => {
                 key={index}
                 href={social.link}
                 target="_blank"
-                className="text-xl hover:text-primary"
+                className="text-xl hover:text-secondary"
               >
                 {social.icon}
               </Link>
@@ -49,13 +61,17 @@ const Navigation = () => {
           </div>
           <Link
             href="#contact"
-            className="text-secondary hover:bg-primary hover:text-white px-4 py-2 rounded-full bg-[#FEFEFE] font-semibold font-[family-name:var(--font-marri-weather)]"
+            className="text-secondary hover:bg-secondary hover:text-white px-4 py-2 rounded-full bg-[#FEFEFE] font-semibold font-[var(--font-marri-weather)]"
           >
             Contact Me
           </Link>
         </div>
 
-        <button className="lg:hidden text-2xl text-gray-700" onClick={toggleDrawer}>
+        <button
+          className="lg:hidden text-2xl text-gray-700"
+          onClick={toggleDrawer}
+          aria-label="Toggle navigation menu"
+        >
           <AiOutlineMenu />
         </button>
       </div>
@@ -66,7 +82,8 @@ const Navigation = () => {
           <div className="w-3/4 max-w-xs bg-white h-full p-5">
             <button
               onClick={toggleDrawer}
-              className="text-2xl text-gray-700 hover:text-gray-900"
+              className="text-2xl text-gray-700 hover:text-gray-900 mb-5"
+              aria-label="Close navigation menu"
             >
               <AiOutlineClose />
             </button>
@@ -75,8 +92,8 @@ const Navigation = () => {
                 <Link
                   key={index}
                   href={nav.link}
-                  className={`block font-semibold font-[family-name:var(--font-marri-weather)] ${
-                    pathname === nav.link ? "text-primary" : "text-black"
+                  className={`block font-semibold font-[var(--font-marri-weather)] ${
+                    pathname === nav.link ? "text-secondary" : "text-black"
                   }`}
                   onClick={toggleDrawer}
                 >
@@ -98,14 +115,20 @@ const Navigation = () => {
               <div className="flex">
                 <Link
                   href="#contact"
-                  className="w-full text-center text-white px-4 py-2 rounded-full bg-primary font-semibold font-[family-name:var(--font-marri-weather)]"
+                  className="w-full text-center text-white px-4 py-2 rounded-full bg-secondary font-semibold font-[var(--font-marri-weather)]"
+                  onClick={toggleDrawer}
                 >
                   Contact Me
                 </Link>
               </div>
             </div>
           </div>
-          <div className="flex-1" onClick={toggleDrawer}></div>
+          {/* Clicking outside the drawer closes it */}
+          <div
+            className="flex-1"
+            onClick={toggleDrawer}
+            aria-hidden="true"
+          ></div>
         </div>
       )}
     </div>
