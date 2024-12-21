@@ -24,8 +24,8 @@ const Home = () => {
       <section className="container">
         <div className="bg-secondary rounded-2xl py-6 md:py-10 px-4 md:px-14 grid md:grid-cols-7 md:h-[80vh] relative md:items-center">
           <div className="md:col-span-6 flex flex-col gap-5 justify-center h-[40vh] lg:h-auto z-20">
-            <h1 className="text-white lg:text-8xl lg:!leading-[120px]">
-            Influencing the Future of Education
+            <h1 className="text-white lg:text-6xl xl:text-7xl xl:!leading-[100px] md:w-2/3">
+              Influencing the Future of Education
             </h1>
 
             <p className="italic w-full md:w-2/3 lg:w-2/5 text-white">
@@ -34,15 +34,23 @@ const Home = () => {
             </p>
 
             <div className="flex">
-              <Button path="/contact" text="Explore My Resources" type="primary" />
+              <Button
+                path="/contact"
+                text="Explore My Resources"
+                type="primary"
+              />
             </div>
           </div>
 
           <div className="md:absolute right-0 md:w-1/2 h-full z-10">
-            <Image src="/images/portrait.png" width={1000} height={1000} alt="portrait" className="rounded-tl-2xl rounded-bl-2xl md:rounded-tl-none md:rounded-bl-none rounded-tr-2xl rounded-br-2xl w-full h-full object-cover" />
-
+            <Image
+              src="/images/portrait.png"
+              width={1000}
+              height={1000}
+              alt="portrait"
+              className="rounded-tl-2xl rounded-bl-2xl md:rounded-tl-none md:rounded-bl-none rounded-tr-2xl rounded-br-2xl w-full h-full object-cover"
+            />
           </div>
-
         </div>
       </section>
 
@@ -103,10 +111,11 @@ const Home = () => {
           </div>
 
           <div className="w-full bg-white p-6 rounded-bl-2xl md:rounded-bl-2xl-none md:rounded-tr-2xl rounded-br-2xl">
-            <BlueskyEmbed uri="at://did:plc:rmoo6cwg3hx7j66bqgveifmb/app.bsky.feed.post/3lb4issykwo2z" cid="bafyreidr3rqzuy52wmfkzktvkss5uvawodfx3pjsnwpggnx35un2fuiody" />
+            <BlueskyEmbed
+              uri="at://did:plc:rmoo6cwg3hx7j66bqgveifmb/app.bsky.feed.post/3lb4issykwo2z"
+              cid="bafyreidr3rqzuy52wmfkzktvkss5uvawodfx3pjsnwpggnx35un2fuiody"
+            />
           </div>
-
-
 
           {/* <div className="grid md:grid-cols-3">
           <div className="rounded-tl-2xl md:rounded-bl-2xl rounded-tr-2xl md:rounded-tr-none bg-primary p-8 flex flex-col justify-center gap-5">

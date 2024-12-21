@@ -5,6 +5,10 @@ import Hero from "@/components/hero";
 import Link from "next/link";
 import EmailMe from "@/components/cta-section";
 
+export const metadata = {
+  title: "Meadia",
+};
+
 const mediaData = [
   {
     id: 1,

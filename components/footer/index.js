@@ -16,6 +16,12 @@ const Footer = () => {
 
   return (
     <footer>
+    <div>
+      {/* Back to top */}
+      <Link href="#top" className="fixed bottom-5 right-5 bg-white text-secondary p-3 rounded-full aspect-square w-10 h-10 grid place-content-center">
+        <span className="text-2xl">↑</span>
+      </Link>
+    </div>
       <div id="contact">
         <Form />
       </div>
