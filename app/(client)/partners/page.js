@@ -1,12 +1,12 @@
 import Hero from "@/components/hero";
 import React from "react";
 import Image from "next/image";
-import { HiCalendar } from "react-icons/hi2";
-import { IoMdTime } from "react-icons/io";
-import { GrLocation } from "react-icons/gr";
-import Link from "next/link";
-import { BiDownload } from "react-icons/bi";
 import EmailMe from "@/components/cta-section";
+import Gallery from "./gallery";
+
+export const metadata = {
+  title: "Partners",
+};
 
 const organizations = [
   {
@@ -111,7 +111,29 @@ const events = [
   },
 ];
 
-const images = ["/images/torres.png", "/images/portrait-2.png", "/images/portrait.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", "/images/torres.png", ]
+const images = [
+  "/images/torres.png",
+  "/images/portrait-2.png",
+  "/images/portrait.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/portrait-2.png",
+  "/images/portrait.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+  "/images/torres.png",
+];
 
 const Page = () => {
   return (
@@ -156,71 +178,12 @@ const Page = () => {
         </div>
       </section>
 
-      {/* <section className="container">
-        <h2>Highlights from Past Events</h2>
-
-        <div className="mt-5 space-y-5">
-          {events.map((item, index) => (
-            <div key={index} className="p-4 bg-white rounded-2xl">
-              <div className="bg-[#F7F7F7] p-2 rounded-xl grid md:grid-cols-3 gap-3">
-                <div className="md:col-span-1 rounded bg-white p-1">
-                  <Image
-                    src={item.image}
-                    width={1000}
-                    height={1000}
-                    alt="organization"
-                    className="lg:aspect-square object-cover w-full h-full rounded"
-                  />
-                </div>
-
-                <div className="md:col-span-2 flex flex-col gap-8">
-                  <div className="space-y-5">
-                    <h3 className="font-bold">{item.title}</h3>
-
-                    <p className="text-[#81818F]">{item.description}</p>
-
-                    <p className="flex items-center gap-2 text-[#81818F] font-semibold">
-                      <HiCalendar className="text-secondary text-2xl" />{" "}
-                      {item.date}
-                    </p>
-
-                    <p className="flex items-center gap-2 text-[#81818F] font-semibold">
-                      <IoMdTime className="text-secondary text-2xl" />{" "}
-                      {item.time}
-                    </p>
-
-                    <p className="flex items-center gap-2 text-[#81818F] font-semibold">
-                      <GrLocation className="text-secondary text-2xl" />{" "}
-                      {item.location}
-                    </p>
-                  </div>
-
-                  <div className="flex gap-5 md:items-center flex-col md:flex-row">
-                    <Link
-                      href={item.view}
-                      className="text-secondary border rounded-full border-secondary px-6 py-3 text-center hover:bg-secondary hover:text-white"
-                    >
-                      View Recording
-                    </Link>
-                    <Link
-                      href={item.download}
-                      className="hover:text-secondary text-center flex items-center gap-2 text-[#58585A]"
-                    >
-                      Download Materials <BiDownload className="text-2xl" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-
       <EmailMe image="/images/email-1.png" />
 
-
-
+      <section className="container space-y-7">
+        <h2>Memorable Moments</h2>
+        <Gallery images={images} />
+      </section>
     </div>
   );
 };

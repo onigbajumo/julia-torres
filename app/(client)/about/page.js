@@ -4,22 +4,26 @@ import Experience from "./experience";
 import Link from "next/link";
 import { FaDownload } from "react-icons/fa6";
 
+export const metadata = {
+  title: "Who is Julia Torres?",
+};
+
 const headShots = [
   {
-    credit: "Julia Torres",
+    credit: "MEGAN ALVAREZ",
     path: "/images/portrait-2.png",
   },
   {
-    credit: "Julia Torres",
-    path: "/images/portrait-2.png",
+    credit: "LELA KIELER",
+    path: "/images/headshot-2.png",
   },
   {
-    credit: "Julia Torres",
-    path: "/images/portrait-2.png",
+    credit: "MARCELO ARGOLO",
+    path: "/images/headshot-3.png",
   },
   {
-    credit: "Julia Torres",
-    path: "/images/portrait-2.png",
+    credit: "MEGAN ALVAREZ",
+    path: "/images/headshot-4.png",
   },
 ];
 
@@ -47,13 +51,13 @@ const Page = () => {
               Colorado. Julia facilitates teacher development workshops rooted
               in the areas of anti-racist education, equity and access in
               literacy and librarianship, and education as a practice of
-              liberation. Julia&lsquo;s work has been featured on NPR, AlJazeera’s The
-              Stream, PBS Education, KQED’s MindShift, Rethinking Schools,
-              Learning for Justice Magazine, School Library Journal, American
-              Libraries Magazine, and many more. Her co-authored title Liven Up
-              Your Library: Design Engaging and Inclusive Programs for Teens and
-              Tweens is just the first of many forthcoming publications for
-              librarians and educators.
+              liberation. Julia&lsquo;s work has been featured on NPR,
+              AlJazeera’s The Stream, PBS Education, KQED’s MindShift,
+              Rethinking Schools, Learning for Justice Magazine, School Library
+              Journal, American Libraries Magazine, and many more. Her
+              co-authored title Liven Up Your Library: Design Engaging and
+              Inclusive Programs for Teens and Tweens is just the first of many
+              forthcoming publications for librarians and educators.
             </p>
           </div>
         </div>
@@ -205,7 +209,14 @@ const Page = () => {
         </div>
       </section>
 
-      <Experience />
+      <div className="container">
+        <div className="bg-white rounded-2xl p-5 md:p-0 space-y-5">
+          <div className="md:p-5">
+            <h2>Professional Accomplishments & Accolades</h2>
+          </div>
+          <Experience />
+        </div>
+      </div>
 
       <section className="container">
         <div className="p-5 bg-white rounded-2xl">
@@ -233,19 +244,22 @@ const Page = () => {
                   />
 
                   <div className="absolute top-2 right-2 ">
-                    <Link href={headShot.path} target="_blank" download className="text-white bg-black bg-opacity-30 rounded-full p-2 w-10 h-10 grid place-content-center"><FaDownload /></Link>
+                    <Link
+                      href={headShot.path}
+                      target="_blank"
+                      download
+                      className="text-white bg-black bg-opacity-30 rounded-full p-2 w-10 h-10 grid place-content-center"
+                    >
+                      <FaDownload />
+                    </Link>
                   </div>
                 </div>
 
-                <p className="text-center capitalize mt-2">Credit: {headShot.credit}</p>
-
-                
+                <p className="text-center capitalize mt-2 text-sm">
+                  Credit: {headShot.credit}
+                </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-10 w-full md:w-2/3">
-          <small className="italic text-[#81818F]">These photos are available for digital use with prior approval from Julia and the photographer. Please ensure proper credit is given to the photographer, and share a link to where the images are used by emailing info@julia.com</small>
           </div>
         </div>
       </section>

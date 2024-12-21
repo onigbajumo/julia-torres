@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const EmailMe = ({image}) => {
+const EmailMe = ({ image }) => {
   return (
     <section className="container space-y-10 py-10">
       <div className="py-20 px-7 md:py-5 md:px-5 rounded-xl bg-[#9F1F22] grid md:grid-cols-4 gap-5 md:items-center bg-[url('/images/email-bg.png')] bg-cover bg-center bg-no-repeat">
@@ -16,7 +16,7 @@ const EmailMe = ({image}) => {
 
           <div className="flex">
             <Link
-              href="/contact"
+              href="#contact"
               className="bg-secondary hover:bg-white hover:text-primary rounded-full pl-4 pr-14 text-white py-2 bg-[url('/images/arrow-white.png')] bg-contain bg-right bg-no-repeat"
             >
               Email Me

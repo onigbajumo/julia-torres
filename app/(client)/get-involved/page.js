@@ -3,6 +3,10 @@ import Hero from "@/components/hero";
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: "Get Invloved",
+};
+
 const organizations = [
   {
     name: "LA Times Book Prize",
@@ -58,16 +62,16 @@ const Page = () => {
             </h2>
 
             <p>
-              It’s vital to support social justice campaigners. We do a lot for
-              free. With your help, I can reach even more students and those
-              working within the institutions that serve them.
+              True transformation begins when we empower individuals to
+              challenge systems, embrace knowledge, and work together for
+              meaningful change.
             </p>
 
             <div className="flex">
               <Button
                 target="blank"
                 path="https://www.paypal.com/donate?hosted_button_id=BWVVQSA2MTWYA&source=qr"
-                text="Donate Now"
+                text="Contribute"
                 type="secondary"
               />
             </div>
@@ -93,11 +97,11 @@ const Page = () => {
       </section>
 
       <section className="container">
-        <div className="rounded-2xl px-6 flex justify-center items-center flex-col gap-16 bg-[url('/images/change.png')] bg-center bg-cover h-[80vh]">
-          <h3 className="text-center font-bold text-white">
+        <div className="rounded-2xl px-6 flex justify-center items-center flex-col gap-16 bg-[url('/images/change.png')] bg-center bg-cover h-[50vh]">
+          {/* <h3 className="text-center font-bold text-white">
             True transformation begins when we empower individuals to challenge
             systems, embrace knowledge, and work together for meaningful change
-          </h3>
+          </h3> */}
 
           <div className="w-full md:w-3/5 inline-flex">
             <Image
@@ -108,10 +112,10 @@ const Page = () => {
               className="w-7 md:w-16 object-contain"
             />
             <div className="">
-              <p className="text-white text-center italic">
+              <h2 className="text-white text-center italic">
                 Education is the most powerful weapon which you can use to
                 change the world.
-              </p>
+              </h2>
               <p className="mt-5 text-white text-center">- Nelson Mandela</p>
             </div>
             <Image
@@ -131,7 +135,10 @@ const Page = () => {
 
           <div className="mt-7 flex flex-wrap gap-0 justify-center">
             {organizations.map((org, index) => (
-              <div key={index} className="p-2 md:p-10 flex flex-col gap-5 w-1/2 md:w-1/3 lg:w-1/4">
+              <div
+                key={index}
+                className="p-2 md:p-10 flex flex-col gap-5 w-1/2 md:w-1/3 lg:w-1/4"
+              >
                 <div>
                   <Image
                     src={org.image}
